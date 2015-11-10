@@ -3,6 +3,7 @@
 一.导入头文件#import "ChineseString.h"
 
 二.使用示例
+
     NSArray *stringsToSort=[NSArray arrayWithObjects:
                             @"￥hhh, .$",@" ￥Chin ese ",@"开源中国 ",@"www.oschina.net",
                             @"开源技术",@"社区",@"开发者",@"传播",
