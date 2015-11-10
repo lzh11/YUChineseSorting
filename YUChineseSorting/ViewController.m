@@ -30,6 +30,8 @@
     
     self.indexArray = [ChineseString IndexArray:stringsToSort];
     self.letterResultArr = [ChineseString LetterSortArray:stringsToSort];
+    
+    
 }
 
 
