@@ -21,11 +21,16 @@
 
 三.注意
 因为中文排序里面有c的文件 pinyin.c
-plan 1
-pch文件
+
+plan 1：
+
+pch文件如下
 例如：
-#ifdef __OBJC__
+ #ifdef __OBJC__
 #import "AppDelegate.h"
 #endif
+
 __OBJC__表示宏内引用的文件确保只被使用Objective-C语言的文件所引用，保证引用关系的清晰。
-plan 1  pinyin.c 改为pinyin.m
+
+plan 2 ：
+pinyin.c 改为pinyin.m
