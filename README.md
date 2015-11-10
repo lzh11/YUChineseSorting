@@ -31,7 +31,7 @@ pch文件如下
       #import "AppDelegate.h"
       #endif
 
-__OBJC__表示宏内引用的文件确保只被使用Objective-C语言的文件所引用，保证引用关系的清晰。
+      __OBJC__表示宏内引用的文件确保只被使用Objective-C语言的文件所引用，保证引用关系的清晰。
 
 plan 2 ：
 
