@@ -18,3 +18,14 @@
   ![log](http://static.oschina.net/uploads/space/2015/1110/095952_dh2k_868062.png)
 
   ![效果图](http://static.oschina.net/uploads/space/2014/0304/163611_Wclh_868062.png)
+
+三.注意
+因为中文排序里面有c的文件 pinyin.c
+plan 1
+pch文件
+例如：
+#ifdef __OBJC__
+#import "AppDelegate.h"
+#endif
+__OBJC__表示宏内引用的文件确保只被使用Objective-C语言的文件所引用，保证引用关系的清晰。
+plan 1  pinyin.c 改为pinyin.m
