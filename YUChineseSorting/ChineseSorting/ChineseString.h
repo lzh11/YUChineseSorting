@@ -10,15 +10,14 @@
 #import "pinyin.h"
 
 @interface ChineseString : NSObject
-@property(retain,nonatomic)NSString *string;
-@property(retain,nonatomic)NSString *pinYin;
+@property(strong,nonatomic)NSString *string;
+@property(strong,nonatomic)NSString *pinYin;
 
 //-----  返回tableview右方indexArray
 +(NSMutableArray*)IndexArray:(NSArray*)stringArr;
 
 //-----  返回联系人
 +(NSMutableArray*)LetterSortArray:(NSArray*)stringArr;
-
 
 
 ///----------------------

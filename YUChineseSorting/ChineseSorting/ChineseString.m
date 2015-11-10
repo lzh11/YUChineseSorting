@@ -16,7 +16,7 @@
 +(NSMutableArray*)IndexArray:(NSArray*)stringArr
 {
     NSMutableArray *tempArray = [self ReturnSortChineseArrar:stringArr];
-    NSMutableArray *A_Result=[NSMutableArray array];
+    NSMutableArray *A_Result = [NSMutableArray array];
     NSString *tempString ;
     
     for (NSString* object in tempArray)
@@ -37,9 +37,9 @@
 +(NSMutableArray*)LetterSortArray:(NSArray*)stringArr
 {
     NSMutableArray *tempArray = [self ReturnSortChineseArrar:stringArr];
-    NSMutableArray *LetterResult=[NSMutableArray array];
+    NSMutableArray *LetterResult = [NSMutableArray array];
     NSMutableArray *item = [NSMutableArray array];
-    NSString *tempString ;
+    NSString *tempString;
     //拼音分组
     for (NSString* object in tempArray) {
         
@@ -63,18 +63,6 @@
 }
 
 
-
-
-//过滤指定字符串   里面的指定字符根据自己的需要添加
-+(NSString*)RemoveSpecialCharacter: (NSString *)str {
-    NSRange urgentRange = [str rangeOfCharacterFromSet: [NSCharacterSet characterSetWithCharactersInString: @",.？、 ~￥#&<>《》()[]{}【】^@/￡¤|§¨「」『』￠￢￣~@#&*（）——+|《》$_€"]];
-    if (urgentRange.location != NSNotFound)
-    {
-        return [self RemoveSpecialCharacter:[str stringByReplacingCharactersInRange:urgentRange withString:@""]];
-    }
-    return str;
-}
-
 ///////////////////
 //
 //返回排序好的字符拼音
@@ -86,10 +74,10 @@
     NSMutableArray *chineseStringsArray=[NSMutableArray array];
     for(int i=0;i<[stringArr count];i++)
     {
-        ChineseString *chineseString=[[ChineseString alloc]init];
-        chineseString.string=[NSString stringWithString:[stringArr objectAtIndex:i]];
-        if(chineseString.string==nil){
-            chineseString.string=@"";
+        ChineseString *chineseString = [[ChineseString alloc]init];
+        chineseString.string = [NSString stringWithString:[stringArr objectAtIndex:i]];
+        if(chineseString.string == nil){
+            chineseString.string = @"";
         }
         //去除两端空格和回车
         chineseString.string  = [chineseString.string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -101,7 +89,7 @@
         
         
         //这里我自己写了一个递归过滤指定字符串   RemoveSpecialCharacter
-        chineseString.string =[ChineseString RemoveSpecialCharacter:chineseString.string];
+        chineseString.string = [ChineseString RemoveSpecialCharacter:chineseString.string];
         // NSLog(@"string====%@",chineseString.string);
         
         
@@ -116,18 +104,18 @@
             chineseString.pinYin = [chineseString.string capitalizedString] ;
         }else{
             if(![chineseString.string isEqualToString:@""]){
-                NSString *pinYinResult=[NSString string];
+                NSString *pinYinResult = [NSString string];
                 for(int j=0;j<chineseString.string.length;j++){
-                    NSString *singlePinyinLetter=[[NSString stringWithFormat:@"%c",
+                    NSString *singlePinyinLetter = [[NSString stringWithFormat:@"%c",
                                                    
                                                    pinyinFirstLetter([chineseString.string characterAtIndex:j])]uppercaseString];
                     //                    NSLog(@"singlePinyinLetter ==%@",singlePinyinLetter);
                     
-                    pinYinResult=[pinYinResult stringByAppendingString:singlePinyinLetter];
+                    pinYinResult = [pinYinResult stringByAppendingString:singlePinyinLetter];
                 }
-                chineseString.pinYin=pinYinResult;
+                chineseString.pinYin = pinYinResult;
             }else{
-                chineseString.pinYin=@"";
+                chineseString.pinYin = @"";
             }
         }
         [chineseStringsArray addObject:chineseString];
@@ -136,27 +124,36 @@
     NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"pinYin" ascending:YES]];
     [chineseStringsArray sortUsingDescriptors:sortDescriptors];
     
-    for(int i=0;i<[chineseStringsArray count];i++){
-        //        NSLog(@"chineseStringsArray====%@",((ChineseString*)[chineseStringsArray objectAtIndex:i]).pinYin);
-    }
+//    for(int i=0;i<[chineseStringsArray count];i++){
+//        NSLog(@"chineseStringsArray====%@",((ChineseString*)[chineseStringsArray objectAtIndex:i]).pinYin);
+//    }
     NSLog(@"-----------------------------");
-    
-    
     return chineseStringsArray;
-    
 }
+
 
 #pragma mark - 返回一组字母排序数组
 +(NSMutableArray*)SortArray:(NSArray*)stringArr
 {
     NSMutableArray *tempArray = [self ReturnSortChineseArrar:stringArr];
-    
+
     //把排序好的内容从ChineseString类中提取出来
-    NSMutableArray *result=[NSMutableArray array];
+    NSMutableArray *result = [NSMutableArray array];
     for(int i=0;i<[stringArr count];i++){
         [result addObject:((ChineseString*)[tempArray objectAtIndex:i]).string];
         NSLog(@"SortArray----->%@",((ChineseString*)[tempArray objectAtIndex:i]).string);
     }
     return result;
+}
+
+
+//过滤指定字符串   里面的指定字符根据自己的需要添加 过滤特殊字符
++(NSString*)RemoveSpecialCharacter: (NSString *)str {
+    NSRange urgentRange = [str rangeOfCharacterFromSet: [NSCharacterSet characterSetWithCharactersInString: @",.？、 ~￥#&<>《》()[]{}【】^@/￡¤|§¨「」『』￠￢￣~@#&*（）——+|《》$_€"]];
+    if (urgentRange.location != NSNotFound)
+    {
+        return [self RemoveSpecialCharacter:[str stringByReplacingCharactersInRange:urgentRange withString:@""]];
+    }
+    return str;
 }
 @end
