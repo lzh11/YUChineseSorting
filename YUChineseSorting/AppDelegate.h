@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  YUChineseSorting
+//  https://github.com/c6357/YUChineseSorting
 //
-//  Created by yuzhx on 15/4/19.
+//  Created by BruceYu on 15/4/19.
 //  Copyright (c) 2015年 BruceYu. All rights reserved.
 //
 
