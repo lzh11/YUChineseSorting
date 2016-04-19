@@ -1,3 +1,5 @@
+![image](https://github.com/c6357/YUChineseSorting/blob/master/sample.gif)
+
 # YUChineseSorting
 
 #pod 'YUChineseSorting', '~> 1.0.1'
