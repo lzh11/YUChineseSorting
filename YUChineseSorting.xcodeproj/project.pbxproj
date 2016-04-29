@@ -14,7 +14,7 @@
 		67C453881AE3F1E200C595AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67C453871AE3F1E200C595AD /* Images.xcassets */; };
 		67C4538B1AE3F1E200C595AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C453891AE3F1E200C595AD /* LaunchScreen.xib */; };
 		67C453971AE3F1E200C595AD /* YUChineseSortingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C453961AE3F1E200C595AD /* YUChineseSortingTests.m */; };
-		67C453A41AE3F21F00C595AD /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 67C453A21AE3F21F00C595AD /* pinyin.c */; };
+		67C453A41AE3F21F00C595AD /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C453A21AE3F21F00C595AD /* pinyin.m */; };
 		67C453AA1AE3F28400C595AD /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C453A91AE3F28400C595AD /* ChineseString.m */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		67C453901AE3F1E200C595AD /* YUChineseSortingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YUChineseSortingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67C453951AE3F1E200C595AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67C453961AE3F1E200C595AD /* YUChineseSortingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUChineseSortingTests.m; sourceTree = "<group>"; };
-		67C453A21AE3F21F00C595AD /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
+		67C453A21AE3F21F00C595AD /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
 		67C453A31AE3F21F00C595AD /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		67C453A81AE3F28400C595AD /* ChineseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseString.h; sourceTree = "<group>"; };
 		67C453A91AE3F28400C595AD /* ChineseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseString.m; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		67C453A11AE3F21200C595AD /* ChineseSorting */ = {
 			isa = PBXGroup;
 			children = (
-				67C453A21AE3F21F00C595AD /* pinyin.c */,
+				67C453A21AE3F21F00C595AD /* pinyin.m */,
 				67C453A31AE3F21F00C595AD /* pinyin.h */,
 				67C453A81AE3F28400C595AD /* ChineseString.h */,
 				67C453A91AE3F28400C595AD /* ChineseString.m */,
@@ -237,7 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67C453A41AE3F21F00C595AD /* pinyin.c in Sources */,
+				67C453A41AE3F21F00C595AD /* pinyin.m in Sources */,
 				67C453AA1AE3F28400C595AD /* ChineseString.m in Sources */,
 				67C453831AE3F1E200C595AD /* ViewController.m in Sources */,
 				67C453801AE3F1E200C595AD /* AppDelegate.m in Sources */,
@@ -436,6 +436,7 @@
 				67C4539C1AE3F1E200C595AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		67C4539D1AE3F1E200C595AD /* Build configuration list for PBXNativeTarget "YUChineseSortingTests" */ = {
 			isa = XCConfigurationList;
@@ -444,6 +445,7 @@
 				67C4539F1AE3F1E200C595AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
