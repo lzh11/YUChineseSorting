@@ -2,13 +2,13 @@
 
 # YUChineseSorting
 
-#pod 'YUChineseSorting', '~> 1.0.1'
-        -> YUChineseSorting (1.0.1)
+#pod 'YUChineseSorting', '~> 1.0.2'
+        -> YUChineseSorting (1.0.2)
         iOS通讯录联系人列表较完整(中文排序)
-        pod 'YUChineseSorting', '~> 1.0.0'
+        pod 'YUChineseSorting', '~> 1.0.2'
          - Homepage: https://github.com/c6357/YUChineseSorting
          - Source:   https://github.com/c6357/YUChineseSorting.git
-         - Versions: 1.0.0 [master repo]
+         - Versions: 1.0.2 [master repo]
 
 
 一.导入头文件#import <ChineseString.h>
